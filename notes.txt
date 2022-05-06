@@ -2,3 +2,5 @@
 	-> learn recursion (focus on OOP for now though)
 - it is possible to implement quicksort without recursion,
   but it's a lot harder 
+
+testing to see if commits show on contribution graph
