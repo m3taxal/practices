@@ -1,4 +1,4 @@
-package com.practices.objectOriented;
+package m3taxal.practices.objectOriented;
 
 public class Person {
     private String name;
