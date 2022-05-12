@@ -1,0 +1,5 @@
+You are captured in an underground cell inside a dungeon. If you don't do anything in the next few seconds, you will most likely die.
+What do you do?
+Rot in your cell
+Unlock the cell with the key next to you
+Congratulations, you died on the first choice!
