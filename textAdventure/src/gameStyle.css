@@ -11,7 +11,7 @@
 }
 
 #gameDialogue{
-    -fx-text-fill: "white";
+    -fx-text-fill: "green";
     -fx-font-size: 30px;
     -fx-font-family: "dpcomic";
     -fx-background-color: #fff, #fff;
