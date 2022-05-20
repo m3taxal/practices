@@ -1,13 +1,12 @@
 import java.util.*;
 
 public class SortingAlgorithms {
-    private int test;
     /**
      * Sort a list using BubbleSort.
      * @param sortList  list that is to be sorted
      * @return          the sorted list
      */
-    public static ArrayList<Integer> bubbleSort(ArrayList<Integer> sortList){
+    public ArrayList<Integer> bubbleSort(ArrayList<Integer> sortList){
         ArrayList<Integer> newSortedList = new ArrayList<>();
         int constSize = sortList.size(); //size of sortList changes during sorting
 
@@ -44,7 +43,7 @@ public class SortingAlgorithms {
      * @param sortList list that is to be sorted
      * @return         sorted list (as Array)
      */
-    public static int[] countingSort(ArrayList<Integer> sortList){
+    public int[] countingSort(ArrayList<Integer> sortList){
         int[] countArray = new int[Collections.max(sortList)];
 
         //create countArray, size equals the biggest element (that is why countingSort is not suitable for lists with large numbers)
@@ -69,12 +68,41 @@ public class SortingAlgorithms {
         return resultArray;
     }
 
+    private int partition(Integer[] sortArray, int start, int end){
+        int pivot = sortArray[end];
+
+        int sep1 = start - 1;
+        for(int sep2 = start; sep2 < end; sep2++){
+            if(sortArray[sep2] <= pivot){
+                sep1++;
+                int temp = sortArray[sep1];
+                sortArray[sep1] = sortArray[sep2];
+                sortArray[sep2] = temp;
+            }
+        }
+        int temp = sortArray[sep1+1];
+        sortArray[sep1+1] = sortArray[end];
+        sortArray[end] = temp;
+
+        return ++sep1;
+    }
+
+    public Integer[] quickSort(Integer[] sortArray, int start, int end){
+        if(start < end){
+            int part = partition(sortArray, start, end);
+            quickSort(sortArray, start, part-1);
+            quickSort(sortArray, part+1, end);
+        }
+
+        return sortArray;
+    }
+
     /**
      * Create a user-filled list with whole numbers.
      *
      * @return  the list filled with numbers
      */
-    public static ArrayList<Integer> createUserInput(){
+    public ArrayList<Integer> createUserInput(){
         ArrayList<Integer> userList = new ArrayList<>();
         Scanner reader = new Scanner(System.in);
 

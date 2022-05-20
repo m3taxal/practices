@@ -71,19 +71,16 @@ public class TextHandler {
     }
 
     /**
-     * Scrolls text in the gameDialogue window. Also determines
-     * whether game ends or continues.
+     * Scrolls text in the gameDialogue window.
      *
-     * @param line      line that is to be scrolled
-     * @param endGame   determines whether game ends. If true,
-     *                  the game will continue. If false, the scrolling
-     *                  will be disabled and the game ends.
-     *                  Ending does not mean terminating the program in this case.
+     * @param line           line that is to be scrolled
+     * @param endScrolling   determines whether scrolling ends. If true,
+     *                       the program can scroll the next line of text. If false, the scrolling
+     *                       will be disabled. To re-enable scrolling, manually set canWrite to true,
      */
-    public void scrollText(String line, boolean endGame, TextArea gameDialogue){
+    public void scrollText(String line, boolean endScrolling, TextArea gameDialogue){
         //to separate different lines in gameDialogue window
         gameDialogue.appendText("\n");
-
         this.letter = 0;
 
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.03), e -> {
@@ -97,6 +94,6 @@ public class TextHandler {
         timeline.setCycleCount(line.length());
 
         timeline.play();
-        timeline.setOnFinished(actionEvent -> gameController.setCanWrite(endGame));
+        timeline.setOnFinished(actionEvent -> gameController.setCanWrite(endScrolling));
     }
 }
