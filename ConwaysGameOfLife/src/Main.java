@@ -1,8 +1,7 @@
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -15,10 +14,9 @@ public class Main extends Application{
 
     private static GridPane grid;
 
-    public static GridPane getGrid() {
-        return grid;
-    }
-
+    /**
+     * Initialise the game grid for Conway's Game Of Life
+     */
     private void initGrid(){
         grid = new GridPane();
         grid.setGridLinesVisible(true);
@@ -42,15 +40,11 @@ public class Main extends Application{
 
         Scene scene = new Scene(grid, 1000, 1000);
 
-        Controller controller = new Controller();
-        controller.initCells(grid);
+        Controller controller = new Controller(grid);
 
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent keyEvent) {
-                switch (keyEvent.getCode()){
-                    case SPACE -> controller.evolve();
-                }
+        scene.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == KeyCode.SPACE) {
+                controller.evolve();
             }
         });
 

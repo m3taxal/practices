@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 public class Main {
 
+    /**
+     * Create a list of numbers to sort with a specified sorting algorithm.
+     * Current algorithms are:
+     *  BubbleSort,
+     *  CountingSort,
+     *  QuickSort
+     */
     public void useSortAlgo(){
         SortingAlgorithms algorithms = new SortingAlgorithms();
 
@@ -29,10 +36,5 @@ public class Main {
                 System.exit(0);
             }
         }
-    }
-
-
-    public static void main(String[] args) {
-
     }
 }

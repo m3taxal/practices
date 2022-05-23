@@ -1,34 +1,36 @@
-import java.util.Arrays;
 
 public class ROT13 {
-    public static void encrypt(String toEncrypt){
+
+    /**
+     * Encrypt messages with ROT13-Encryption.
+     *
+     * @param toEncrypt message to encrypt
+     */
+    public ROT13(String toEncrypt){
         char[] alphabetLowercase = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz".toCharArray();
         char[] alphabetUppercase = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
 
-        String newMessage = "";
+        StringBuilder newMessage = new StringBuilder();
 
         for(int letter = 0; letter < toEncrypt.length(); letter++){
             char encryptLetter = toEncrypt.charAt(letter);
 
+            //spaces stay the same
             if(String.valueOf(encryptLetter).equals(" ")){
-                newMessage += " ";
+                newMessage.append(" ");
             }
 
-            if(Character.isUpperCase(encryptLetter)){;
+            if(Character.isUpperCase(encryptLetter)){
                 int found = new String(alphabetUppercase).indexOf(encryptLetter);
-                newMessage += alphabetUppercase[found+13];
+                newMessage.append(alphabetUppercase[found + 13]);
             }
 
             if(Character.isLowerCase(encryptLetter)) {
                 int found = new String(alphabetLowercase).indexOf(encryptLetter);
-                newMessage += alphabetLowercase[found+13];
+                newMessage.append(alphabetLowercase[found + 13]);
             }
         }
 
         System.out.println(newMessage);
-    }
-
-    public static void main(String[] args) {
-        encrypt(args[0]);
     }
 }
