@@ -1,6 +1,23 @@
-- to implement a quicksort, you should use recursion
-	-> learn recursion (focus on OOP for now though)
-- it is possible to implement quicksort without recursion,
-  but it's a lot harder 
+Stuff to do:
 
-testing to see if commits show on contribution graph
+- cross-platform text editor
+
+- download manager
+
+- 2048
+
+- chess
+
+- audio player
+
+- graphical calculator
+
+- weather forecast program
+
+- personal website
+
+- something with an API (Gutenberg would be a good start)
+
+- contributing to open source projects
+
+- unit testing with different libraries (JavaFX...)
