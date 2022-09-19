@@ -11,7 +11,7 @@ public class Main {
      *  CountingSort,
      *  QuickSort
      */
-    public void useSortAlgo(){
+    public static void useSortAlgo(){
         SortingAlgorithms algorithms = new SortingAlgorithms();
 
         System.out.println("""
@@ -36,5 +36,28 @@ public class Main {
                 System.exit(0);
             }
         }
+    }
+    final int AGE = 32;
+    public enum Color {
+        // constructor parameters are defined as
+        // the constants are enumerated
+        RED("#FF0000"),
+        GREEN("#00FF00"),
+        BLUE("#0000FF");
+
+        private String code;        // object reference variable
+
+        private Color(String code) { // constructor
+            this.code = code;
+        }
+
+
+        public String getCode() {
+            return this.code;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Color.GREEN.getCode());
     }
 }

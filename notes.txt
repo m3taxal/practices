@@ -21,3 +21,19 @@ Stuff to do:
 - contributing to open source projects
 
 - unit testing with different libraries (JavaFX...)
+
+While learning:
+
+- hashmaps: does setting hashcode and receiving sme value with different key put another element in hashmap?
+- how to access superclass variable from subclass without constructor
+- when you assign a reference to an object to a variable that has a type that is either the superclass of the reference-class, what can you actually do?
+
+weird? no got it
+Readable readable = new TextMessage("ope", "TextMessage is Readable!"); // works
+TextMessage message = readable; // doesn't work
+
+TextMessage castMessage = (TextMessage) readable; // works if, and only if, readable is of text message type
+
+ contain either 0 or 1 amounts of any giv
+ en object. ?
+  .collect(Collectors.toCollection(ArrayList::new));?
