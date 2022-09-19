@@ -6,7 +6,7 @@ public class SortingAlgorithms {
      * @param sortList  list that is to be sorted
      * @return          the sorted list
      */
-    public ArrayList<Integer> bubbleSort(ArrayList<Integer> sortList){
+    public static ArrayList<Integer> bubbleSort(ArrayList<Integer> sortList){
         ArrayList<Integer> newSortedList = new ArrayList<>();
         int constSize = sortList.size(); //size of sortList changes during sorting
 
