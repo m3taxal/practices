@@ -3,6 +3,10 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class CoursePractices {
+    public static void main(String[] args) {
+        System.out.println(decimal_toBinary(23222));
+    }
+
     private static void printFin(){
         System.out.println("Hallo Fin");
     }
@@ -73,5 +77,39 @@ public class CoursePractices {
         smallList = SortingAlgorithms.bubbleSort(smallList);
         Collections.reverse(smallList);
         return smallList;
+    }
+
+    private static String decimal_toBinary(int num){
+        int[] bitSystem = new int[64];
+        if(num != 0){
+            for (int i = 0; i < bitSystem.length; i++){
+                if(num/2==0){
+                    bitSystem[i] = 1;
+                    break;
+                }
+
+                //NO REMAINDER
+                if(num%2==0){
+                    bitSystem[i] = 0;
+                }
+                //WITH REMAINDER
+                else {
+                    bitSystem[i] = 1;
+                }
+                num = num/2;
+            }
+        }else {return "0";}
+
+        for(int i = bitSystem.length-1; i > -1; i--){
+            if(bitSystem[i]==1){
+                int[] tmp = Arrays.copyOfRange(bitSystem, 0, i+1);
+                String binaryNumber = "";
+                for(int j = tmp.length-1; j > -1; j--){
+                    binaryNumber += String.valueOf(tmp[j]);
+                }
+                return binaryNumber;
+            }
+        }
+        return "something went wrong, lol";
     }
 }
