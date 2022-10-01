@@ -62,7 +62,8 @@ public class Hunt12 {
         }
         //if a player has a score less than 8, ask them if they want to throw another dice
         if(temporaryScore < 8){
-            System.out.println("\n"+"Player " + currentPlayer + ", your score is " + temporaryScore + ", which is less than 8. Type 'yes' if you want to throw another dice and no if you don't.");
+            System.out.println("\n"+"Player " + currentPlayer + ", your score is " +
+                               temporaryScore + ", which is less than 8. Type 'yes' if you want to throw another dice and no if you don't.");
 
             //this while-loop validates the input
             //only allows "yes" and "no", everything else is considered a wrong input
