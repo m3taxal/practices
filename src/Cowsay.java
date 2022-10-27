@@ -17,7 +17,7 @@ public class Cowsay {
      *
      * @param message   cow message. MOO
      */
-    public Cowsay(String message){
+    public static void Cowsay(String message){
         String ceiling = repeat(message.length()+2, "_");
         String floor = repeat(message.length()+2, "-");
 
@@ -33,5 +33,9 @@ public class Cowsay {
                                    "                                     ||w--||     \\|/\n" +
                                    "                                \\|/\n", ceiling, message, floor);
         System.out.println(moo);
+    }
+
+    public static void main(String[] args) {
+        Cowsay("asd");
     }
 }
